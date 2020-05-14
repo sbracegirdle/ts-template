@@ -16,8 +16,9 @@
     "upgrade": "npm-run-all upgrade:latest upgrade:vulnerabilities",
     "upgrade:latest": "npm-check --skip-unused --update-all",
     "upgrade:vulnerabilities": "npm audit fix",
-    "format-quick": "pretty-quick --staged",
-    "pre-commit": "npm-run-all lint format-quick"
+    "format:quick": "pretty-quick --staged",
+    "format:full": "prettier --write **/*.ts",
+    "pre-commit": "npm-run-all lint format:quick"
   },
   "husky": {
     "hooks": {
