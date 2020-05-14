@@ -2,7 +2,7 @@
   "name": "ts-template",
   "version": "1.0.0",
   "description": "Template/boilerplate for Typescript-based NodeJS projects",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "webpack",
