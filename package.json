@@ -1,0 +1,57 @@
+{
+  "name": "ts-template",
+  "version": "1.0.0",
+  "description": "Template/boilerplate for Typescript-based NodeJS projects",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "webpack",
+    "lint": "eslint . --ext .ts",
+    "test": "npm-run-all test:*",
+    "test:unit": "mocha",
+    "test:bdd": "cucumber-js --require-module ts-node/register --require **/*.steps.ts **/*.feature",
+    "check": "npm-run-all check:*",
+    "check:vulnerabilities": "npm audit",
+    "check:out-of-date": "npm-check --skip-unused",
+    "upgrade": "npm-run-all upgrade:latest upgrade:vulnerabilities",
+    "upgrade:latest": "npm-check --skip-unused --update-all",
+    "upgrade:vulnerabilities": "npm audit fix",
+    "format-quick": "pretty-quick --staged",
+    "pre-commit": "npm-run-all lint format-quick"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pre-commit"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbracegirdle/ts-template.git"
+  },
+  "author": "sbracegirdle@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/cucumber": "^6.0.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.1",
+    "@types/sinon": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "chai": "^4.2.0",
+    "cucumber": "^6.0.5",
+    "eslint": "^7.0.0",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.2",
+    "npm-check": "^5.9.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "sinon": "^9.0.2",
+    "ts-loader": "^7.0.4",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
