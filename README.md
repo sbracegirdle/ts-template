@@ -6,7 +6,6 @@ Includes configurations for:
 
 - Language; `typescript` (including `ts-node`)
 - Linting (pre-commit); `eslint`
-- Bundling; `webpack`, `ts-loader`
 - Formatting (pre-commit); `prettier`, `husky`
 - Unit testing; `mocha`, `chai`, `sinon`
 - Feature testing; `cucumber-js`
@@ -46,12 +45,6 @@ npm run lint
 
 ```bash
 npm run build
-```
-
-## How to create distribution (zip)
-
-```bash
-npm run dist
 ```
 
 ## Check dependencies
