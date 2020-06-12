@@ -22,5 +22,5 @@
     "resolveJsonModule": true,
     "outDir": "build/"
   },
-  "exclude": ["cdk.out", "build", "dist"]
+  "exclude": ["cdk.out", "build", "dist", "**/*.test.ts", "**/*.steps.ts"]
 }

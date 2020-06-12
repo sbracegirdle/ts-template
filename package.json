@@ -2,10 +2,14 @@
   "name": "ts-template",
   "version": "1.0.0",
   "description": "Template/boilerplate for Typescript-based NodeJS projects",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "webpack",
+    "build": "npm-run-all build:tsc build:copy-config build:install",
+    "build:clean": "rm -rf build/",
+    "build:tsc": "tsc --build tsconfig-build.json",
+    "build:copy-config": "cp package*.json build/",
+    "build:install": "cd build && npm ci --only==production",
     "lint": "eslint . --ext .ts",
     "test": "npm-run-all test:*",
     "test:unit": "mocha",
@@ -22,7 +26,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pre-commit"
+      "pre-commit": "npm run pre-commit"
     }
   },
   "repository": {
@@ -49,10 +53,7 @@
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "sinon": "^9.0.2",
-    "ts-loader": "^7.0.4",
     "ts-node": "^8.10.1",
-    "typescript": "^3.9.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "typescript": "^3.9.2"
   }
 }
