@@ -11,6 +11,7 @@ Includes configurations for:
 - Feature testing; `cucumber-js`
 - Dependency maintenance; `npm-check`, `npm audit`
 - NPM script tools; `npm-run-all`
+- Bundling; `webpack`, `ts-loader`
 
 ## Installation and pre-requisites
 
